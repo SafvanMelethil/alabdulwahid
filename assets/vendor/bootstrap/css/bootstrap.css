@@ -445,6 +445,7 @@ label {
 }
 
 button {
+  
   border-radius: 0;
 }
 
@@ -8071,6 +8072,7 @@ textarea.form-control-lg {
 }
 
 .mb-4 {
+  text-align: end;
   margin-bottom: 1.5rem !important;
 }
 

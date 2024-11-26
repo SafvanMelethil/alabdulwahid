@@ -1,79 +1,142 @@
-const grid = document.getElementById('image-grid');
-const loadMoreBtn = document.getElementById('load-more');
-const uploadBtn = document.getElementById('upload-btn');
-const imageUploadInput = document.getElementById('image-upload');
+const uploadTrigger = document.getElementById('upload-trigger');
+const modal = document.getElementById('upload-modal');
+const closeModal = document.getElementById('close-modal');
+const form = document.getElementById('upload-form');
+const gridContainer = document.getElementById('grid-container');
 
-// Initial Images (example; replace this with the images you want to show initially)
-const initialImages = [
-    '',
-    '',
-    '',
-];
+// Fullscreen modal for media preview
+const fullScreenModal = document.createElement('div');
+fullScreenModal.classList.add('fullscreen-modal');
+document.body.appendChild(fullScreenModal);
 
-// Load images from localStorage
-const getSavedImages = () => {
-    const savedImages = localStorage.getItem('uploadedImages');
-    return savedImages ? JSON.parse(savedImages) : [];
-};
+fullScreenModal.innerHTML = `
+  <div class="fullscreen-content">
+    <span class="close-fullscreen">&times;</span>
+    <div id="fullscreen-media"></div>
+  </div>
+`;
 
-// Save images to localStorage
-const saveImages = (images) => {
-    localStorage.setItem('uploadedImages', JSON.stringify(images));
-};
-
-// Render images into the grid
-const renderImages = (images) => {
-    images.forEach((src) => {
-        const img = document.createElement('img');
-        img.src = src;
-        grid.appendChild(img);
-    });
-};
-
-// Combine initial and saved images
-let allImages = [...initialImages, ...getSavedImages()];
-
-// State for tracking displayed images
-let displayedCount = 3; // Initially display 3 images
-
-// Load initial images and saved images from localStorage
-renderImages(allImages.slice(0, displayedCount)); // Show first 3 images
-
-// Load more images when Load More button is clicked
-loadMoreBtn.addEventListener('click', () => {
-    const nextImages = allImages.slice(displayedCount, displayedCount + 3); // Load next 3 images
-    renderImages(nextImages);
-    displayedCount += nextImages.length;
-
-    // Hide "Load More" button if all images are loaded
-    if (displayedCount >= allImages.length) {
-        loadMoreBtn.style.display = 'none';
-    }
+// Close fullscreen modal
+fullScreenModal.querySelector('.close-fullscreen').addEventListener('click', () => {
+  fullScreenModal.style.display = 'none';
 });
 
-// Trigger file input when Add Image button is clicked
-uploadBtn.addEventListener('click', () => {
-    imageUploadInput.click();
+// Load media from localStorage on page load
+document.addEventListener('DOMContentLoaded', () => {
+  const storedMedia = JSON.parse(localStorage.getItem('mediaData')) || [];
+  storedMedia.forEach((mediaData) => addMediaToGrid(mediaData));
 });
 
-// Add uploaded image to the grid and save it
-imageUploadInput.addEventListener('change', (event) => {
-    const file = event.target.files[0];
-    if (file) {
-        const reader = new FileReader();
-        reader.onload = () => {
-            const img = document.createElement('img');
-            img.src = reader.result;
-            grid.appendChild(img);
+// Open modal on clicking the upload trigger
+uploadTrigger.addEventListener('click', () => {
+  modal.style.display = 'flex';
+});
 
-            // Save the new image in localStorage
-            const savedImages = getSavedImages();
-            savedImages.push(reader.result);
-            saveImages(savedImages);
+// Close modal on clicking the close button
+closeModal.addEventListener('click', () => {
+  modal.style.display = 'none';
+});
 
-            // Update allImages array and render the newly uploaded image
-            allImages.push(reader.result);
-        };
-        reader.readAsDataURL(file);
+// Handle form submission
+form.addEventListener('submit', (e) => {
+  e.preventDefault();
+
+  const mediaInput = document.getElementById('media');
+  const name = document.getElementById('uploader-name').value;
+  const details = document.getElementById('uploader-details').value;
+
+  if (mediaInput.files.length === 0) {
+    alert('Please select a file.');
+    return;
+  }
+
+  const file = mediaInput.files[0];
+  const reader = new FileReader();
+
+  reader.onload = () => {
+    const mediaType = file.type.startsWith('image/') ? 'image' : 'video';
+    const mediaData = {
+      src: reader.result, // Store the Base64 data
+      type: mediaType,
+      name: name,
+      details: details,
+    };
+
+    // Add media to grid
+    addMediaToGrid(mediaData);
+
+    // Save media data to localStorage
+    saveMediaToLocalStorage(mediaData);
+
+    modal.style.display = 'none';
+    form.reset();
+  };
+
+  reader.readAsDataURL(file);
+});
+
+// Add media to the grid
+function addMediaToGrid(mediaData) {
+  const slot = document.createElement('div');
+  slot.classList.add('grid-item');
+  slot.innerHTML = `
+    ${
+      mediaData.type === 'image'
+        ? `<img src="${mediaData.src}" alt="${mediaData.name}">`
+        : `<video src="${mediaData.src}" muted></video>`
     }
+    <div class="action-buttons">
+      <button class="action-button delete-btn">Delete</button>
+    </div>
+  `;
+
+  gridContainer.appendChild(slot);
+
+  // Handle delete action
+  slot.querySelector('.delete-btn').addEventListener('click', () => {
+    slot.remove();
+    deleteMediaFromLocalStorage(mediaData.src);
+  });
+
+  // Handle full-screen view
+  slot.addEventListener('click', (e) => {
+    if (!e.target.classList.contains('action-button')) {
+      const fullscreenContent = document.getElementById('fullscreen-media');
+      fullscreenContent.innerHTML =
+        mediaData.type === 'image'
+          ? `<img src="${mediaData.src}" alt="${mediaData.name}" style="width: 100%; height: auto;">`
+          : `<video src="${mediaData.src}" controls autoplay style="width: 100%; height: auto;"></video>`;
+      fullScreenModal.style.display = 'flex';
+    }
+  });
+}
+
+// Save media data to localStorage
+function saveMediaToLocalStorage(mediaData) {
+  const storedMedia = JSON.parse(localStorage.getItem('mediaData')) || [];
+  storedMedia.push(mediaData);
+  localStorage.setItem('mediaData', JSON.stringify(storedMedia));
+}
+
+// Delete media from localStorage
+function deleteMediaFromLocalStorage(src) {
+  const storedMedia = JSON.parse(localStorage.getItem('mediaData')) || [];
+  const updatedMedia = storedMedia.filter((media) => media.src !== src);
+  localStorage.setItem('mediaData', JSON.stringify(updatedMedia));
+}
+
+
+// Add click functionality for each tab
+document.querySelectorAll('.tab').forEach(tab => {
+  tab.addEventListener('click', () => {
+    alert(`You clicked on: ${tab.textContent.trim()}`);
+  });
+});
+
+// Add click functionality for dropdown items
+document.querySelectorAll('.dropdown li a').forEach(item => {
+  item.addEventListener('click', (event) => {
+    event.preventDefault(); // Prevent default link behavior
+    alert(`Dropdown item clicked: ${item.textContent}`);
+  });
 });
