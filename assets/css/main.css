@@ -144,7 +144,7 @@ button[type="submit"]:hover {
 }
 
 a {
-  color: #007bff;
+  color: #ffffff;
   text-decoration: none;
 }
 
@@ -411,7 +411,7 @@ form button:hover {
 /* Base styling for the tab menu */
 .tab-menu {
   position: relative;
-  top: -1px;
+  top: 59px;
   left: 5%;
   width: 90%;
   background: #fff;
@@ -733,7 +733,7 @@ form button:hover {
 }
 
 .button{
-  background-color: #2ea359;
+  background-color: #ffffff;
     color: white;
     border: none;
     padding: 10px 20px;
@@ -743,6 +743,29 @@ form button:hover {
     margin-bottom: 20PX;
 
     transition: background-color 0.3s ease;
+}
+
+.button-container {
+  display: flex;
+  justify-content: flex-end; /* Aligns content to the right */
+  padding: 20px; /* Adds spacing around the button */
+}
+
+.right-button {
+  position: relative;
+  left: 10%;
+  background-color: #000000; /* Button color */
+  color: rgb(0, 0, 0);
+  border: none;
+  padding: 20px 40px;
+  font-size: 16px;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.right-button:hover {
+  background-color: #000000; /* Darker shade on hover */
 }
 
 /* Scrolling message */
@@ -1068,8 +1091,6 @@ form button:hover {
 section,
 .section {
   color: var(--default-color);
-  background-color: var(--background-color);
-  padding: 60px 0;
   scroll-margin-top: 100px;
   overflow: clip;
 }
@@ -1265,6 +1286,14 @@ section,
   }
 }
 
+section, .section {
+  color: var(--default-color);
+  /* background-color: var(--background-color); */
+  padding: 60px 0;
+  scroll-margin-top: 100px;
+  overflow: clip;
+}
+
 /*--------------------------------------------------------------
 # Services Section
 --------------------------------------------------------------*/
@@ -1396,12 +1425,44 @@ section,
   font-size: 1.3rem;
 }
 
+
+.media-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr); /* 3 columns */
+  gap: 20px;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.media-item {
+  background-color: white;
+  padding: 10px;
+  border-radius: 8px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.media-item img,
+.media-item video {
+  width: 100%;
+  height: auto;
+  border-radius: 8px;
+}
+
+.media-item video {
+  max-height: 300px; /* Adjust height for videos */
+}
+
+
+
+
+
+
 /*--------------------------------------------------------------
 # Services 2 Section
 --------------------------------------------------------------*/
 .services-2 {
   overflow: visible;
-  margin-bottom: 200px;
+  margin-bottom: 00px;
 }
 
 .services-2 .section-title {
@@ -1409,9 +1470,8 @@ section,
 }
 
 .services-2 .section-title h2 {
-  color: color-mix(in srgb, var(--contrast-color), transparent 50%);
   text-transform: uppercase;
-  font-size: 20px;
+  font-size: 40px;
 }
 
 .services-2 .section-title p {
@@ -2948,6 +3008,7 @@ section,
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 }
+
 }
 
 
@@ -3037,6 +3098,42 @@ section,
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 }
+.button{
+  background-color: #ffffff;
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    font-size: 16px;
+    cursor: pointer;
+    border-radius: 5px;
+    margin-bottom: 20PX;
+
+    transition: background-color 0.3s ease;
+}
+
+.button-container {
+  display: flex;
+  justify-content: flex-end; /* Aligns content to the right */
+  padding: 20px; /* Adds spacing around the button */
+}
+
+.right-button {
+  position: relative;
+  left: 10%;
+  background-color: #000000; /* Button color */
+  color: rgb(0, 0, 0);
+  border: none;
+  padding: 10px 20px;
+  font-size: 16px;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.right-button:hover {
+  background-color: #000000; /* Darker shade on hover */
+}
+
 }
 
 @media only screen and (min-width: 768px) {
@@ -3126,6 +3223,43 @@ section,
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 }
+.button{
+  background-color: #ffffff;
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    font-size: 16px;
+    cursor: pointer;
+    border-radius: 5px;
+    margin-bottom: 20PX;
+
+    transition: background-color 0.3s ease;
+}
+
+.button-container {
+  display: flex;
+  justify-content: flex-end; /* Aligns content to the right */
+  padding: 20px; /* Adds spacing around the button */
+}
+
+.right-button {
+  position: relative;
+  left: 10%;
+  background-color: #000000; /* Button color */
+  color: rgb(0, 0, 0);
+  border: none;
+  padding: 1px 4px;
+  font-size: 16px;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.right-button:hover {
+  background-color: #000000; /* Darker shade on hover */
+}
+
+
 }
 
 
@@ -3229,6 +3363,42 @@ html:not(.no-js) [data-aos^=zoom][data-aos^=zoom].aos-animate {
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 }
+.button{
+  background-color: #ffffff;
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    font-size: 16px;
+    cursor: pointer;
+    border-radius: 5px;
+    margin-bottom: 20PX;
+
+    transition: background-color 0.3s ease;
+}
+
+.button-container {
+  display: flex;
+  justify-content: flex-end; /* Aligns content to the right */
+  padding: 20px; /* Adds spacing around the button */
+}
+
+.right-button {
+  position: relative;
+  left: 10%;
+  background-color: #000000; /* Button color */
+  color: rgb(0, 0, 0);
+  border: none;
+  padding: 10px 50px;
+  font-size: 16px;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.right-button:hover {
+  background-color: #000000; /* Darker shade on hover */
+}
+
 
 
 }
@@ -3333,6 +3503,42 @@ html:not(.no-js) [data-aos^=zoom][data-aos^=zoom].aos-animate {
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 }
+.button{
+  background-color: #ffffff;
+    color: white;
+    border: none;
+    padding: 10px 2px;
+    font-size: 16px;
+    cursor: pointer;
+    border-radius: 5px;
+    margin-bottom: 20PX;
+
+    transition: background-color 0.3s ease;
+}
+
+.button-container {
+  display: flex;
+  justify-content: flex-end; /* Aligns content to the right */
+  padding: 20px; /* Adds spacing around the button */
+}
+
+.right-button {
+  position: relative;
+  left: 10%;
+  background-color: #000000; /* Button color */
+  color: rgb(0, 0, 0);
+  border: none;
+  padding: 20px 10px;
+  font-size: 16px;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.right-button:hover {
+  background-color: #000000; /* Darker shade on hover */
+}
+
 
 
 }

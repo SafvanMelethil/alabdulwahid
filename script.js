@@ -140,3 +140,7 @@ document.querySelectorAll('.dropdown li a').forEach(item => {
     alert(`Dropdown item clicked: ${item.textContent}`);
   });
 });
+
+
+
+
