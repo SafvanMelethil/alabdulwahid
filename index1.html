@@ -38,8 +38,8 @@
 </div>
 
 <div class="button-container">
-  <button class="homebtn"><a href="index.html">الرئيسية</a></button>
-</div>
+    <button class="homebtn"><a href="index.html">الرئيسية</a></button>
+  </div>
 
 
   <header id="header" class="header d-flex align-items-center position-relative">
@@ -74,7 +74,7 @@
 
 <div class="page-title dark-background" data-aos="fade" style="background-image: url(assets/img/page-title-bg.webp);">
   <div class="container position-relative">
-    <h1>ال طارق
+    <h1>المناسبات
     </h1>
     <nav class="breadcrumbs">
       <ol>
@@ -87,101 +87,124 @@
 
 
 
-<style>
+    <style>
        
-    
-  .gallery {
-      display: grid;
-      grid-template-columns: repeat(3, 1fr); /* 3 columns */
-      gap: 20px; /* Spacing between items */
-  }
-
-  .gallery-item {
-      position: relative;
-      border: 2px solid #ccc;
-      border-radius: 8px;
-      overflow: hidden; /* Keeps media inside the container */
-      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-      width: 100%; /* Ensures items adjust to grid size */
-      height: 300px; /* Set a fixed height for uniform display */
-  }
-
-  .gallery-item img,
-  .gallery-item video {
-      position: absolute;
-      top: 50%;
-      left: 50%;
-      transform: translate(-50%, -50%);
-      width: 100%; /* Ensure media fills the container */
-      height: 100%; /* Stretch to container height */
-      object-fit: cover; /* Maintains aspect ratio while filling container */
-      border-radius: 8px;
-      cursor: pointer;
-  }
-
-  .delete-btn {
-      position: absolute;
-      top: 10px;
-      right: 10px;
-      background: red;
-      color: white;
-      border: none;
-      border-radius: 50%;
-      width: 30px;
-      height: 30px;
-      font-size: 16px;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      cursor: pointer;
-  }
-
-  #modal {
-      display: none;
-      position: fixed;
-      top: 0;
-      left: 0;
-      width: 100%;
-      height: 100%;
-      background: rgba(0, 0, 0, 0.8);
-      justify-content: center;
-      align-items: center;
-  }
-
-  #modalContent {
-      max-width: 80%;
-      max-height: 80%;
-  }
-
-  .close {
-      position: absolute;
-      top: 20px;
-      right: 20px;
-      background: #fff;
-      border: none;
-      font-size: 20px;
-      cursor: pointer;
-      border-radius: 50%;
-      width: 40px;
-      height: 40px;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-  }
-</style>
-
+        .container {
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+            position: relative;
+        }
+        .grid {
+            display: grid;
+            grid-template-columns: 1fr;
+            gap: 15px;
+        }
+        .card {
+            background: #ffffff;
+            padding: 15px;
+            border: 1px solid #ddd;
+            border-radius: 8px;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+        }
+        .btn {
+            padding: 10px 20px;
+            margin: 5px 0;
+            background: #00c424;
+            color: #ffffff;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+            text-decoration: none;
+        }
+        .btn:hover {
+            background: #0056b3;
+        }
+        .delete-btn {
+            background: #dc3545;
+        }
+        .delete-btn:hover {
+            background: #b02a37;
+        }
+        .top-right {
+            position: absolute;
+            bottom: 100%;
+            left: 10px;
+        }
+    </style>
 </head>
 <body>
+    <div class="container">
+        
+        <a href="index2.html" class="btn top-right">إضافة تفاصيل جديدة +</a>
+        <div id="detailsGrid" class="grid"></div>
+    </div>
 
-<input type="file" id="fileInput" accept="image/*,video/*">
-<button id="addButton">Add to Gallery</button>
-<div class="gallery" id="gallery"></div>
-<div id="modal">
-  <button class="close">&times;</button>
-  <div id="modalContent"></div>
-</div>
-<script src="script2.js"></script>
-  <footer id="footer" class="footer dark-background">
+    <script>
+        // Retrieve marriage details from localStorage
+        let marriageDetails = JSON.parse(localStorage.getItem('marriageDetails')) || [];
+        const detailsGrid = document.getElementById('detailsGrid');
+
+        // Render marriage details
+        function renderDetails() {
+            detailsGrid.innerHTML = ''; // Clear existing content
+
+            if (marriageDetails.length === 0) {
+                detailsGrid.innerHTML = '<p>لا توجد تفاصيل.</p>'; // Empty message
+                return;
+            }
+
+            marriageDetails.forEach((detail, index) => {
+                const card = document.createElement('div');
+                card.className = 'card';
+
+                for (const [key, value] of Object.entries(detail)) {
+                    const p = document.createElement('p');
+                    p.textContent = `${key}: ${value}`;
+                    card.appendChild(p);
+                }
+
+                // Edit button
+                const editBtn = document.createElement('button');
+                editBtn.textContent = 'تعديل';
+                editBtn.className = 'btn';
+                editBtn.onclick = () => editDetail(index);
+
+                // Delete button
+                const deleteBtn = document.createElement('button');
+                deleteBtn.textContent = 'حذف';
+                deleteBtn.className = 'btn delete-btn';
+                deleteBtn.onclick = () => deleteDetail(index);
+
+                card.appendChild(editBtn);
+                card.appendChild(deleteBtn);
+
+                detailsGrid.appendChild(card);
+            });
+        }
+
+        // Edit detail
+        function editDetail(index) {
+            const detail = marriageDetails[index];
+            localStorage.setItem('editIndex', index); // Save index for editing
+            localStorage.setItem('editDetail', JSON.stringify(detail));
+            window.location.href = 'index2.html';
+        }
+
+        // Delete detail
+        function deleteDetail(index) {
+            if (confirm('هل أنت متأكد من حذف هذه التفاصيل؟')) {
+                marriageDetails.splice(index, 1);
+                localStorage.setItem('marriageDetails', JSON.stringify(marriageDetails));
+                renderDetails(); // Re-render the details
+            }
+        }
+
+        // Initial render
+        renderDetails();
+    </script>
+
+<footer id="footer" class="footer dark-background">
 
     <div class="footer-top">
       <div class="container">
@@ -249,4 +272,7 @@
 
 </body>
 
+</html>
+
+</body>
 </html>

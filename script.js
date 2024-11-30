@@ -143,4 +143,40 @@ document.querySelectorAll('.dropdown li a').forEach(item => {
 
 
 
+const swiper = new Swiper('.services-2 .swiper', {
+  loop: true,
+  direction: 'horizontal', // Set the direction
+  slidesPerView: 'auto', // Adjust as per layout
+  spaceBetween: 40, // Space between slides
+  navigation: {
+    nextEl: '.js-custom-next',
+    prevEl: '.js-custom-prev',
+  },
+  pagination: {
+    el: '.swiper-pagination',
+    clickable: true,
+  },
+  autoplay: {
+    delay: 2500, // Autoplay delay (milliseconds)
+    disableOnInteraction: false, // Keeps autoplay running after user interaction
+  },
+});
+
+// Add hover event listeners to the images
+const swiperImages = document.querySelectorAll('.services-2 .service-item img');
+
+swiperImages.forEach((image) => {
+  // Stop autoplay on mouse enter
+  image.addEventListener('mouseenter', () => {
+    swiper.autoplay.stop();
+    console.log('Autoplay stopped');
+  });
+
+  // Restart autoplay on mouse leave
+  image.addEventListener('mouseleave', () => {
+    swiper.autoplay.start();
+    console.log('Autoplay started');
+  });
+});
+
 
