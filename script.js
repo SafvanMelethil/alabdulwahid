@@ -179,4 +179,3 @@ swiperImages.forEach((image) => {
   });
 });
 
-

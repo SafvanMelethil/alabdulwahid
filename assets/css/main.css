@@ -88,6 +88,14 @@ h6 {
   font-family: var(--heading-font);
 }
 
+.navlogo{
+  position: relative;
+  width: 20%;
+  top: 5px;
+  right: 221%;
+}
+
+
 /* PHP Email Form Messages
 ------------------------------*/
 
@@ -255,7 +263,7 @@ a:hover {
 
 .logo-container {
   position: relative;
-  right: 30px;
+  left: 78%;
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -293,14 +301,14 @@ a:hover {
   position: relative;
   text-align: center;
   font-size: 30px;
-  color: #555;
+  color: #ae0000;
   left: 7%;
 }
 
 .middle-text span {
   font-weight: bold;
   font-size: 20px;
-  color: #333;
+  color: #af4141;
 }
 
 .register-btn {
@@ -608,6 +616,13 @@ form button:hover {
     left: -100%;
     visibility: visible;
   }
+  .navlogo{
+    position: relative;
+    width: 20%;
+    top: 5px;
+    right: 221%;
+  }
+  
 }
 
 /* Navmenu - Mobile */
@@ -737,6 +752,15 @@ form button:hover {
   }
 }
 
+.navlogo{
+  position: relative;
+  width: 20%;
+  top: 5px;
+  right: 221%;
+}
+
+
+
 .button{
   background-color: #ffffff;
     color: white;
@@ -757,10 +781,11 @@ form button:hover {
 }
 
 .right-button {
-  position: relative;
-  left: 10%;
-  background-color: #000000; /* Button color */
-  color: rgb(0, 0, 0);
+  position: absolute; /* Positioning relative to the container */
+  bottom: -27%; /* Distance from the bottom of the container */
+  left: 1157px; /* Distance from the left of the container */
+  background-color: #0daa1a; /* Button color */
+  color: #ffffff; /* Text color */
   border: none;
   padding: 20px 40px;
   font-size: 16px;
@@ -789,11 +814,11 @@ form button:hover {
 .scrolling-message span {
   display: inline-block;
   position: relative;
-  animation: scroll 20s linear infinite;
+  animation: scroll-right 20s linear infinite;
   white-space: nowrap;
 }
 
-@keyframes scroll {
+@keyframes scroll-right {
   from {
     transform: translateX(-300%); /* Start from outside the left edge */
   }
@@ -1040,6 +1065,14 @@ form button:hover {
   [data-aos-delay] {
     transition-delay: 0 !important;
   }
+  .navlogo{
+    position: relative;
+    width: 20%;
+    top: 5px;
+    right: 221%;
+  }
+  
+  
 }
 
 /*--------------------------------------------------------------
@@ -2812,6 +2845,10 @@ section, .section {
   padding: 20px;
 }
 
+.accept{
+  color: #000;
+}
+
 .profile-container h2 {
   margin-top: 0;
   color: #007bff;
@@ -2928,7 +2965,7 @@ section, .section {
       position: static;
       font-size: 20px;
       text-align: center;
-      color: #555;
+      color: #ae0000;
     }
   
     .logo-container p{
@@ -2943,6 +2980,15 @@ section, .section {
       object-fit: cover;
       margin-bottom: 5px;
     }
+
+    .navlogo{
+      position: relative;
+      width: 20%;
+      top: 5px;
+      right: 221%;
+    }
+    
+    
   
   }
 
@@ -2959,7 +3005,7 @@ section, .section {
       font-size: 15px;
     
       text-align: center;
-      color: #555;
+      color: #ae0000;
     
     }
   
@@ -3029,6 +3075,16 @@ section, .section {
   -moz-osx-font-smoothing: grayscale;
 }
 
+.navlogo{
+  position: relative;
+  width: 20%;
+  top: 5px;
+  right: 221%;
+}
+
+
+
+
 }
 
 
@@ -3045,7 +3101,7 @@ section, .section {
     font-size: 10px;
   
     text-align: center;
-    color: #555;
+    color: #ae0000;
   
   }
 
@@ -3138,13 +3194,14 @@ section, .section {
 }
 
 .right-button {
-  position: relative;
-  left: 10%;
-  background-color: #a80000; /* Button color */
-  color: rgb(220, 94, 94);
+  position: absolute; /* Positioning relative to the container */
+  bottom: -27%; /* Distance from the bottom of the container */
+  left: 1157px; /* Distance from the left of the container */
+  background-color: #0daa1a; /* Button color */
+  color: #ffffff; /* Text color */
   border: none;
-  padding: 10px 20px;
-  font-size: 16px;
+  padding: 10px 10px;
+  font-size: 10px;
   border-radius: 5px;
   cursor: pointer;
   transition: background-color 0.3s ease;
@@ -3153,6 +3210,14 @@ section, .section {
 .right-button:hover {
   background-color: #74b9fd; /* Darker shade on hover */
 }
+
+.navlogo{
+  position: relative;
+  width: 20%;
+  top: 5px;
+  right: 221%;
+}
+
 
 }
 
@@ -3165,11 +3230,11 @@ section, .section {
   }
 
   .middle-text{
-    position: static;
-    font-size: 10px;
+    position: relative;
+    font-size: 20px;
   
     text-align: center;
-    color: #555;
+    color: #ae0000;
   
   }
 
@@ -3263,12 +3328,13 @@ section, .section {
 }
 
 .right-button {
-  position: relative;
-  left: 10%;
-  background-color: #a80000; /* Button color */
-  color: rgb(220, 94, 94);
+  position: absolute; /* Positioning relative to the container */
+  bottom: -27%; /* Distance from the bottom of the container */
+  left: 79%; /* Distance from the left of the container */
+  background-color: #0daa1a; /* Button color */
+  color: #ffffff; /* Text color */
   border: none;
-  padding: 1px 4px;
+  padding: 10px 10px;
   font-size: 16px;
   border-radius: 5px;
   cursor: pointer;
@@ -3278,6 +3344,15 @@ section, .section {
 .right-button:hover {
   background-color: #74b9fd; /* Darker shade on hover */
 }
+
+.navlogo{
+  position: relative;
+  width: 60%;
+  top: 5px;
+  right: 170%;
+}
+
+
 
 
 }
@@ -3291,11 +3366,11 @@ section, .section {
   }
 
   .middle-text{
-    position: static;
-    font-size: 12px;
+    position: relative;
+    font-size: 20px;
   
     text-align: center;
-    color: #555;
+    color: #ae0000;
   
   }
 
@@ -3389,21 +3464,29 @@ section, .section {
 }
 
 .right-button {
-  position: relative;
-  left: 10%;
-  background-color: #a80000; /* Button color */
-  color: rgb(220, 94, 94);
+  position: absolute; /* Positioning relative to the container */
+  bottom: -32%; /* Distance from the bottom of the container */
+  left: 74%; /* Distance from the left of the container */
+  background-color: #0daa1a; /* Button color */
+  color: #ffffff; /* Text color */
   border: none;
-  padding: 1px 4px;
+  padding: 10px 20px;
   font-size: 16px;
   border-radius: 5px;
   cursor: pointer;
   transition: background-color 0.3s ease;
 }
-
 .right-button:hover {
   background-color: #74b9fd; /* Darker shade on hover */
 }
+
+.navlogo{
+  position: relative;
+  width: 60%;
+  top: 5px;
+  right: 160%;
+}
+
 
 
 }
@@ -3417,11 +3500,11 @@ section, .section {
   }
 
   .middle-text{
-    position: static;
-    font-size: 5px;
+    position: relative;
+    font-size: 15px;
   
     text-align: center;
-    color: #555;
+    color: #ae0000;
   
   }
 
@@ -3515,12 +3598,13 @@ section, .section {
 }
 
 .right-button {
-  position: relative;
-  left: 10%;
-  background-color: #a80000; /* Button color */
-  color: rgb(220, 94, 94);
+  position: absolute; /* Positioning relative to the container */
+  bottom: -28%; /* Distance from the bottom of the container */
+  left: 68%; /* Distance from the left of the container */
+  background-color: #0daa1a; /* Button color */
+  color: #ffffff; /* Text color */
   border: none;
-  padding: 1px 4px;
+  padding: 10px 20px;
   font-size: 16px;
   border-radius: 5px;
   cursor: pointer;
@@ -3530,6 +3614,15 @@ section, .section {
 .right-button:hover {
   background-color: #74b9fd; /* Darker shade on hover */
 }
+
+.navlogo{
+  position: relative;
+  width: 60%;
+  top: 5px;
+  right: 140%;
+}
+
+
 
 
 }
@@ -3548,11 +3641,11 @@ section, .section {
   }
 
   .middle-text{
-    position: static;
-    font-size: 20px;
+    position: relative;
+    font-size: 19px;
   
     text-align: center;
-    color: #555;
+    color: #ae0000;
   
   }
 
@@ -3659,12 +3752,13 @@ html:not(.no-js) [data-aos^=zoom][data-aos^=zoom].aos-animate {
 }
 
 .right-button {
-  position: relative;
-  left: 10%;
-  background-color: #a80000; /* Button color */
-  color: rgb(220, 94, 94);
+  position: absolute; /* Positioning relative to the container */
+  bottom: -22%; /* Distance from the bottom of the container */
+  left: 79%; /* Distance from the left of the container */
+  background-color: #0daa1a; /* Button color */
+  color: #ffffff; /* Text color */
   border: none;
-  padding: 10px 50px;
+  padding: 10px 20px;
   font-size: 16px;
   border-radius: 5px;
   cursor: pointer;
@@ -3674,6 +3768,13 @@ html:not(.no-js) [data-aos^=zoom][data-aos^=zoom].aos-animate {
 .right-button:hover {
   background-color: #74b9fd; /* Darker shade on hover */
 }
+.navlogo{
+  position: relative;
+  width: 60%;
+  top: 5px;
+  right: 174%;
+}
+
 
 
 
@@ -3688,11 +3789,11 @@ html:not(.no-js) [data-aos^=zoom][data-aos^=zoom].aos-animate {
   }
 
   .middle-text{
-    position: static;
-    font-size: 35px;
+    position: relative;
+    font-size: 18px;
   
     text-align: center;
-    color: #555;
+    color: #ae0000;
   
   }
 
@@ -3799,12 +3900,13 @@ html:not(.no-js) [data-aos^=zoom][data-aos^=zoom].aos-animate {
 }
 
 .right-button {
-  position: relative;
-  left: 10%;
-  background-color: #a80000; /* Button color */
-  color: rgb(220, 94, 94);
+  position: absolute; /* Positioning relative to the container */
+  bottom: -27%; /* Distance from the bottom of the container */
+  left: 83%; /* Distance from the left of the container */
+  background-color: #0daa1a; /* Button color */
+  color: #ffffff; /* Text color */
   border: none;
-  padding: 20px 10px;
+  padding: 20px 40px;
   font-size: 16px;
   border-radius: 5px;
   cursor: pointer;
@@ -3814,8 +3916,642 @@ html:not(.no-js) [data-aos^=zoom][data-aos^=zoom].aos-animate {
 .right-button:hover {
   background-color: #74b9fd; /* Darker shade on hover */
 }
+.navlogo{
+  position: relative;
+  width: 60%;
+  top: 5px;
+  right: 160%;
+}
+}
+@media only screen and (min-width: 1212px) {
+  .tab{
+    flex: 1;
+    text-align: center;
+    position: relative;
+    font-size: 20px;
+  }
+
+  .middle-text{
+    position: relative;
+    font-size: 18px;
+  
+    text-align: center;
+    color: #ae0000;
+  
+  }
+
+  .logo-container p{
+    position: relative;
+    margin: 0;
+    font-size: 18px;
+    left: 20px;
+  }
+
+  .logo-container img{
+    position: relative;
+    left: 20px;
+    width: 70%;
+    height: 40%;
+    border-radius: 10%;
+    object-fit: cover;
+    margin-bottom: 5px;
+  }
+  .navmenu a, .navmenu a:focus{
+    position: static;
+  color: var(--nav-dropdown-color);
+  font-family: var(--nav-font);
+  font-size: 10px;
+  font-weight: 500;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  white-space: nowrap;
+  transition: 0.3s;
+
+  }
+  .bi::before, [class^="bi-"]::before, [class*=" bi-"]::before {
+    display: none;
+    font-family: bootstrap-icons !important;
+    font-style: normal;
+    font-weight: normal !important;
+    font-variant: normal;
+    text-transform: none;
+    line-height: 1;
+    vertical-align: -.125em;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+}
+.upload-trigger {
+  position: relative;
+  left: 117%;
+  border-radius: 15px;
+  background-color: #000000;
+  color: white;
+  font-size: 48px;
+  font-weight: bold;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  cursor: pointer;
+  width: 300px; /* Optional: Set a width */
+  height: 300px; /* Optional: Set a height */
+  text-align: center; /* Center text content */
+  display: grid;
+}
+.about p {
+  text-align: end;
+  font-size: 20px;
+  color: var(--contrast-color);
+}
+
+html:not(.no-js) [data-aos^=zoom][data-aos^=zoom].aos-animate {
+  position: relative;
+  /* width: 100%; */
+  opacity: 1;
+  -webkit-transform: translateZ(0) scale(1);
+  transform: translateZ(0) scale(1);
+}
+.bi::before, [class^="bi-"]::before, [class*=" bi-"]::before {
+  display: inline-block;
+  font-family: bootstrap-icons !important;
+  font-style: normal;
+  font-weight: normal !important;
+  font-variant: normal;
+  text-transform: none;
+  line-height: 1;
+  vertical-align: -.125em;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+.button{
+  background-color: #ffffff;
+    color: white;
+    border: none;
+    padding: 10px 2px;
+    font-size: 16px;
+    cursor: pointer;
+    border-radius: 5px;
+    margin-bottom: 20PX;
+
+    transition: background-color 0.3s ease;
+}
+
+.button-container {
+  display: flex;
+  justify-content: flex-end; /* Aligns content to the right */
+  padding: 20px; /* Adds spacing around the button */
+}
+
+.right-button {
+  position: absolute; /* Positioning relative to the container */
+  bottom: -27%; /* Distance from the bottom of the container */
+  left: 80%; /* Distance from the left of the container */
+  background-color: #0daa1a; /* Button color */
+  color: #ffffff; /* Text color */
+  border: none;
+  padding: 20px 40px;
+  font-size: 16px;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.right-button:hover {
+  background-color: #74b9fd; /* Darker shade on hover */
+}
+.navlogo{
+  position: relative;
+  width: 60%;
+  top: 5px;
+  right: 160%;
+}
+
+.logo-container {
+  position: relative;
+  left: 75%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+
 
 
 
 }
+
+@media only screen and (min-width: 1399px) {
+  .tab{
+    flex: 1;
+    text-align: center;
+    position: relative;
+    font-size: 20px;
+  }
+
+  .middle-text{
+    position: relative;
+    font-size: 18px;
+  
+    text-align: center;
+    color: #ae0000;
+  
+  }
+
+  .logo-container p{
+    position: relative;
+    margin: 0;
+    font-size: 18px;
+    left: 20px;
+  }
+
+  .logo-container img{
+    position: relative;
+    left: 20px;
+    width: 70%;
+    height: 40%;
+    border-radius: 10%;
+    object-fit: cover;
+    margin-bottom: 5px;
+  }
+  .navmenu a, .navmenu a:focus{
+    position: static;
+  color: var(--nav-dropdown-color);
+  font-family: var(--nav-font);
+  font-size: 10px;
+  font-weight: 500;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  white-space: nowrap;
+  transition: 0.3s;
+
+  }
+  .bi::before, [class^="bi-"]::before, [class*=" bi-"]::before {
+    display: none;
+    font-family: bootstrap-icons !important;
+    font-style: normal;
+    font-weight: normal !important;
+    font-variant: normal;
+    text-transform: none;
+    line-height: 1;
+    vertical-align: -.125em;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+}
+.upload-trigger {
+  position: relative;
+  left: 117%;
+  border-radius: 15px;
+  background-color: #000000;
+  color: white;
+  font-size: 48px;
+  font-weight: bold;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  cursor: pointer;
+  width: 300px; /* Optional: Set a width */
+  height: 300px; /* Optional: Set a height */
+  text-align: center; /* Center text content */
+  display: grid;
+}
+.about p {
+  text-align: end;
+  font-size: 20px;
+  color: var(--contrast-color);
+}
+
+html:not(.no-js) [data-aos^=zoom][data-aos^=zoom].aos-animate {
+  position: relative;
+  /* width: 100%; */
+  opacity: 1;
+  -webkit-transform: translateZ(0) scale(1);
+  transform: translateZ(0) scale(1);
+}
+.bi::before, [class^="bi-"]::before, [class*=" bi-"]::before {
+  display: inline-block;
+  font-family: bootstrap-icons !important;
+  font-style: normal;
+  font-weight: normal !important;
+  font-variant: normal;
+  text-transform: none;
+  line-height: 1;
+  vertical-align: -.125em;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+.button{
+  background-color: #ffffff;
+    color: white;
+    border: none;
+    padding: 10px 2px;
+    font-size: 16px;
+    cursor: pointer;
+    border-radius: 5px;
+    margin-bottom: 20PX;
+
+    transition: background-color 0.3s ease;
+}
+
+.button-container {
+  display: flex;
+  justify-content: flex-end; /* Aligns content to the right */
+  padding: 20px; /* Adds spacing around the button */
+}
+
+.right-button {
+  position: absolute; /* Positioning relative to the container */
+  bottom: -27%; /* Distance from the bottom of the container */
+  left: 80%; /* Distance from the left of the container */
+  background-color: #0daa1a; /* Button color */
+  color: #ffffff; /* Text color */
+  border: none;
+  padding: 20px 40px;
+  font-size: 16px;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.right-button:hover {
+  background-color: #74b9fd; /* Darker shade on hover */
+}
+.navlogo{
+  position: relative;
+  width: 60%;
+  top: 5px;
+  right: 160%;
+}
+
+.logo-container {
+  position: relative;
+  left: 75%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+
+
+
+
+}
+@media only screen and (min-width: 1212px) {
+  .tab{
+    flex: 1;
+    text-align: center;
+    position: relative;
+    font-size: 20px;
+  }
+
+  .middle-text{
+    position: relative;
+    font-size: 18px;
+  
+    text-align: center;
+    color: #ae0000;
+  
+  }
+
+  .logo-container p{
+    position: relative;
+    margin: 0;
+    font-size: 18px;
+    left: 20px;
+  }
+
+  .logo-container img{
+    position: relative;
+    left: 20px;
+    width: 70%;
+    height: 40%;
+    border-radius: 10%;
+    object-fit: cover;
+    margin-bottom: 5px;
+  }
+  .navmenu a, .navmenu a:focus{
+    position: static;
+  color: var(--nav-dropdown-color);
+  font-family: var(--nav-font);
+  font-size: 10px;
+  font-weight: 500;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  white-space: nowrap;
+  transition: 0.3s;
+
+  }
+  .bi::before, [class^="bi-"]::before, [class*=" bi-"]::before {
+    display: none;
+    font-family: bootstrap-icons !important;
+    font-style: normal;
+    font-weight: normal !important;
+    font-variant: normal;
+    text-transform: none;
+    line-height: 1;
+    vertical-align: -.125em;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+}
+.upload-trigger {
+  position: relative;
+  left: 117%;
+  border-radius: 15px;
+  background-color: #000000;
+  color: white;
+  font-size: 48px;
+  font-weight: bold;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  cursor: pointer;
+  width: 300px; /* Optional: Set a width */
+  height: 300px; /* Optional: Set a height */
+  text-align: center; /* Center text content */
+  display: grid;
+}
+.about p {
+  text-align: end;
+  font-size: 20px;
+  color: var(--contrast-color);
+}
+
+html:not(.no-js) [data-aos^=zoom][data-aos^=zoom].aos-animate {
+  position: relative;
+  /* width: 100%; */
+  opacity: 1;
+  -webkit-transform: translateZ(0) scale(1);
+  transform: translateZ(0) scale(1);
+}
+.bi::before, [class^="bi-"]::before, [class*=" bi-"]::before {
+  display: inline-block;
+  font-family: bootstrap-icons !important;
+  font-style: normal;
+  font-weight: normal !important;
+  font-variant: normal;
+  text-transform: none;
+  line-height: 1;
+  vertical-align: -.125em;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+.button{
+  background-color: #ffffff;
+    color: white;
+    border: none;
+    padding: 10px 2px;
+    font-size: 16px;
+    cursor: pointer;
+    border-radius: 5px;
+    margin-bottom: 20PX;
+
+    transition: background-color 0.3s ease;
+}
+
+.button-container {
+  display: flex;
+  justify-content: flex-end; /* Aligns content to the right */
+  padding: 20px; /* Adds spacing around the button */
+}
+
+.right-button {
+  position: absolute; /* Positioning relative to the container */
+  bottom: -27%; /* Distance from the bottom of the container */
+  left: 80%; /* Distance from the left of the container */
+  background-color: #0daa1a; /* Button color */
+  color: #ffffff; /* Text color */
+  border: none;
+  padding: 20px 40px;
+  font-size: 16px;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.right-button:hover {
+  background-color: #74b9fd; /* Darker shade on hover */
+}
+.navlogo{
+  position: relative;
+  width: 60%;
+  top: 5px;
+  right: 160%;
+}
+
+.logo-container {
+  position: relative;
+  left: 75%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+
+
+
+
+}
+
+@media only screen and (min-width: 1400px) {
+  .tab{
+    flex: 1;
+    text-align: center;
+    position: relative;
+    font-size: 20px;
+  }
+
+  .middle-text{
+    position: relative;
+    font-size: 18px;
+    text-align: center;
+    color: #ae0000;
+  
+  }
+
+  .logo-container p{
+    position: relative;
+    margin: 0;
+    font-size: 18px;
+    left: 20px;
+  }
+
+  .logo-container img{
+    position: relative;
+    left: 20px;
+    width: 70%;
+    height: 40%;
+    border-radius: 10%;
+    object-fit: cover;
+    margin-bottom: 5px;
+  }
+  .navmenu a, .navmenu a:focus{
+    position: static;
+  color: var(--nav-dropdown-color);
+  font-family: var(--nav-font);
+  font-size: 10px;
+  font-weight: 500;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  white-space: nowrap;
+  transition: 0.3s;
+
+  }
+  .bi::before, [class^="bi-"]::before, [class*=" bi-"]::before {
+    display: none;
+    font-family: bootstrap-icons !important;
+    font-style: normal;
+    font-weight: normal !important;
+    font-variant: normal;
+    text-transform: none;
+    line-height: 1;
+    vertical-align: -.125em;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+}
+.upload-trigger {
+  position: relative;
+  left: 117%;
+  border-radius: 15px;
+  background-color: #000000;
+  color: white;
+  font-size: 48px;
+  font-weight: bold;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  cursor: pointer;
+  width: 300px; /* Optional: Set a width */
+  height: 300px; /* Optional: Set a height */
+  text-align: center; /* Center text content */
+  display: grid;
+}
+.about p {
+  text-align: end;
+  font-size: 20px;
+  color: var(--contrast-color);
+}
+
+html:not(.no-js) [data-aos^=zoom][data-aos^=zoom].aos-animate {
+  position: relative;
+  /* width: 100%; */
+  opacity: 1;
+  -webkit-transform: translateZ(0) scale(1);
+  transform: translateZ(0) scale(1);
+}
+.bi::before, [class^="bi-"]::before, [class*=" bi-"]::before {
+  display: inline-block;
+  font-family: bootstrap-icons !important;
+  font-style: normal;
+  font-weight: normal !important;
+  font-variant: normal;
+  text-transform: none;
+  line-height: 1;
+  vertical-align: -.125em;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+.button{
+  background-color: #ffffff;
+    color: white;
+    border: none;
+    padding: 10px 2px;
+    font-size: 16px;
+    cursor: pointer;
+    border-radius: 5px;
+    margin-bottom: 20PX;
+
+    transition: background-color 0.3s ease;
+}
+
+.button-container {
+  display: flex;
+  justify-content: flex-end; /* Aligns content to the right */
+  padding: 20px; /* Adds spacing around the button */
+}
+
+.right-button {
+  position: absolute; /* Positioning relative to the container */
+  bottom: -27%; /* Distance from the bottom of the container */
+  left: 83%; /* Distance from the left of the container */
+  background-color: #0daa1a; /* Button color */
+  color: #ffffff; /* Text color */
+  border: none;
+  padding: 20px 40px;
+  font-size: 16px;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.right-button:hover {
+  background-color: #74b9fd; /* Darker shade on hover */
+}
+.navlogo{
+  position: relative;
+  width: 60%;
+  top: 5px;
+  right: 160%;
+}
+
+.logo-container {
+  position: relative;
+  left: 92%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+
+
+
+
+}
+
+
+
+
+
+
 
