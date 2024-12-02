@@ -465,6 +465,7 @@ form button:hover {
 /* Colors for tabs */
 .green { background-color: violet; }
 .light-green { background-color: indigo; }
+.neon-green { background-color: brown; }
 .brown { background-color: blue; }
 .dark-brown { background-color: green; }
 .gold { background-color: rgb(200, 200, 26); }
@@ -3632,6 +3633,281 @@ section, .section {
 
 
 }
+
+
+@media only screen and (max-width: 425px) {
+  .tab{
+    flex: 1;
+    text-align: center;
+    position: relative;
+    font-size: 9px;
+  }
+
+  .middle-text{
+    position: relative;
+    font-size: 15px;
+  
+    text-align: center;
+    color: #ae0000;
+  
+  }
+
+  .logo-container p{
+    position: relative;
+    margin: 0;
+    font-size: 10px;
+    left: 18px;
+  }
+
+  .logo-container img{
+    position: relative;
+    left: 20px;
+    width: 70%;
+    height: 40%;
+    border-radius: 10%;
+    object-fit: cover;
+    margin-bottom: 5px;
+  }
+  .navmenu a, .navmenu a:focus{
+    position: static;
+  color: var(--nav-dropdown-color);
+  font-family: var(--nav-font);
+  font-size: 10px;
+  font-weight: 500;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  white-space: nowrap;
+  transition: 0.3s;
+
+  }
+  .bi::before, [class^="bi-"]::before, [class*=" bi-"]::before {
+    display: none;
+    font-family: bootstrap-icons !important;
+    font-style: normal;
+    font-weight: normal !important;
+    font-variant: normal;
+    text-transform: none;
+    line-height: 1;
+    vertical-align: -.125em;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+}
+.upload-trigger {
+  position: relative;
+  left: 117%;
+  border-radius: 15px;
+  background-color: #000000;
+  color: white;
+  font-size: 48px;
+  font-weight: bold;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  cursor: pointer;
+  width: 300px; /* Optional: Set a width */
+  height: 300px; /* Optional: Set a height */
+  text-align: center; /* Center text content */
+  display: grid;
+}
+.bi::before, [class^="bi-"]::before, [class*=" bi-"]::before {
+  display: inline-block;
+  font-family: bootstrap-icons !important;
+  font-style: normal;
+  font-weight: normal !important;
+  font-variant: normal;
+  text-transform: none;
+  line-height: 1;
+  vertical-align: -.125em;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+.button{
+  background-color: #ffffff;
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    font-size: 16px;
+    cursor: pointer;
+    border-radius: 5px;
+    margin-bottom: 20PX;
+
+    transition: background-color 0.3s ease;
+}
+
+.button-container {
+  display: flex;
+  justify-content: flex-end; /* Aligns content to the right */
+  padding: 20px; /* Adds spacing around the button */
+}
+
+.right-button {
+  position: absolute; /* Positioning relative to the container */
+  bottom: -32%; /* Distance from the bottom of the container */
+  left: 69%; /* Distance from the left of the container */
+  background-color: #0daa1a; /* Button color */
+  color: #ffffff; /* Text color */
+  border: none;
+  padding: 5px 2px;
+  font-size: 16px;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.right-button:hover {
+  background-color: #74b9fd; /* Darker shade on hover */
+}
+
+.navlogo{
+  position: relative;
+  width: 60%;
+  top: 5px;
+  right: 165%;
+}
+
+
+
+
+}
+
+@media only screen and (max-width: 430px) {
+  .tab{
+    flex: 1;
+    text-align: center;
+    position: relative;
+    font-size: 9px;
+  }
+
+  .middle-text{
+    position: relative;
+    font-size: 15px;
+  
+    text-align: center;
+    color: #ae0000;
+  
+  }
+
+  .logo-container p{
+    position: relative;
+    margin: 0;
+    font-size: 10px;
+    left: 18px;
+  }
+
+  .logo-container img{
+    position: relative;
+    left: 20px;
+    width: 70%;
+    height: 40%;
+    border-radius: 10%;
+    object-fit: cover;
+    margin-bottom: 5px;
+  }
+  .navmenu a, .navmenu a:focus{
+    position: static;
+  color: var(--nav-dropdown-color);
+  font-family: var(--nav-font);
+  font-size: 10px;
+  font-weight: 500;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  white-space: nowrap;
+  transition: 0.3s;
+
+  }
+  .bi::before, [class^="bi-"]::before, [class*=" bi-"]::before {
+    display: none;
+    font-family: bootstrap-icons !important;
+    font-style: normal;
+    font-weight: normal !important;
+    font-variant: normal;
+    text-transform: none;
+    line-height: 1;
+    vertical-align: -.125em;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+}
+.upload-trigger {
+  position: relative;
+  left: 117%;
+  border-radius: 15px;
+  background-color: #000000;
+  color: white;
+  font-size: 48px;
+  font-weight: bold;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  cursor: pointer;
+  width: 300px; /* Optional: Set a width */
+  height: 300px; /* Optional: Set a height */
+  text-align: center; /* Center text content */
+  display: grid;
+}
+.bi::before, [class^="bi-"]::before, [class*=" bi-"]::before {
+  display: inline-block;
+  font-family: bootstrap-icons !important;
+  font-style: normal;
+  font-weight: normal !important;
+  font-variant: normal;
+  text-transform: none;
+  line-height: 1;
+  vertical-align: -.125em;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+.button{
+  background-color: #ffffff;
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    font-size: 16px;
+    cursor: pointer;
+    border-radius: 5px;
+    margin-bottom: 20PX;
+
+    transition: background-color 0.3s ease;
+}
+
+.button-container {
+  display: flex;
+  justify-content: flex-end; /* Aligns content to the right */
+  padding: 20px; /* Adds spacing around the button */
+}
+
+.right-button {
+  position: absolute; /* Positioning relative to the container */
+  bottom: -32%; /* Distance from the bottom of the container */
+  left: 69%; /* Distance from the left of the container */
+  background-color: #0daa1a; /* Button color */
+  color: #ffffff; /* Text color */
+  border: none;
+  padding: 5px 2px;
+  font-size: 16px;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.right-button:hover {
+  background-color: #74b9fd; /* Darker shade on hover */
+}
+
+.navlogo{
+  position: relative;
+  width: 60%;
+  top: 5px;
+  right: 165%;
+}
+
+
+
+
+}
+
+
 
 
 
